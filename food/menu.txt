@@ -1,0 +1,9 @@
+scrambled_egg
+pancake
+cake
+pizza
+burger
+grilled_meat
+salad
+fish_cotelete
+soup
