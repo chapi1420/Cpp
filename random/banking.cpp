@@ -109,7 +109,8 @@ int main() {
         user1 = createAccount(user1);
         cout << "Account has been successfully created!\n";
         decor();
-        cout +=1;
+        cout << "Welcome " << user1.firstName << " " << user1.lastName << "!\n";
+        count += 1;
         main();
     } else if (choose == 'B') {
         user1.cash = withdraw(user1.cash);
@@ -119,7 +120,7 @@ int main() {
         main();
     } else if (choose == 'E') {
         cout << "Exiting the system. Thank you!\n";
-        exit; 
+        exit(0);
     } else {
         cout << "Invalid option. Please try again.\n";
     }
