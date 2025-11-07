@@ -63,6 +63,65 @@ void displayList(Node* head) {
     cout << "NULL" << endl;
 }
 
+//delete from beginning
+void deleteFromBeginning(Node*& head) {
+    if (head == nullptr) {
+        cout << "List is empty!" << endl;
+        return;
+    }
+
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+}
+
+// Delete from end
+void deleteFromEnd(Node*& head) {
+    if (head == nullptr) {
+        cout << "List is empty!" << endl;
+        return;
+    }
+
+    if (head->next == nullptr) {
+        delete head;
+        head = nullptr;
+        return;
+    }
+
+    Node* temp = head;
+    while (temp->next->next != nullptr)
+        temp = temp->next;
+
+    delete temp->next;
+    temp->next = nullptr;
+}
+
+//delete from middle
+void deleteFromPosition(Node*& head, int position) {
+    if (head == nullptr) {
+        cout << "List is empty!" << endl;
+        return;
+    }
+
+    if (position == 1) {
+        deleteFromBeginning(head);
+        return;
+    }
+
+    Node* temp = head;
+    for (int i = 1; temp != nullptr && i < position - 1; i++)
+        temp = temp->next;
+
+    if (temp == nullptr || temp->next == nullptr) {
+        cout << "Position out of range!" << endl;
+        return;
+    }
+
+    Node* nodeToDelete = temp->next;
+    temp->next = temp->next->next;
+    delete nodeToDelete;
+}
+
 int main() {
     Node* head = nullptr;
 
@@ -84,6 +143,14 @@ int main() {
     insertAtEnd(head, 40);
     cout << "After inserting at end: ";
     displayList(head);
+
+
+    deleteFromBeginning(head);
+    cout<<"after deleting at the beginning: ";
+    displayList(head);
+
+
+    
 
     return 0;
 }
