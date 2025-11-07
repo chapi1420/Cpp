@@ -145,8 +145,17 @@ int main() {
     displayList(head);
 
 
+    deleteFromPosition(head, 2);
+    cout<<"after deleting from a position: ";
+    displayList(head);
+
     deleteFromBeginning(head);
     cout<<"after deleting at the beginning: ";
+    displayList(head);
+
+
+    deleteFromEnd(head);
+    cout<<"after deleting from the the end: ";
     displayList(head);
 
 
