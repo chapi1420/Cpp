@@ -27,7 +27,7 @@ void enqueue(GenderPQ &q, string gender) {
         q.front = p;
         if (q.rear == NULL) q.rear = p;
     }
-    else { // male
+    else { 
         if (q.rear == NULL) q.front = q.rear = p;
         else {
             q.rear->next = p;
@@ -55,4 +55,25 @@ void display(GenderPQ &q) {
         cur = cur->next;
     }
     cout << endl;
+}
+
+
+int main() {
+    GenderPQ q;
+    init(q);
+
+    enqueue(q, "male");
+    enqueue(q, "female");
+    enqueue(q, "male");
+    enqueue(q, "female");
+
+    cout << "Queue: ";
+    display(q);
+
+    cout << "Dequeued: " << dequeue(q) << endl;
+
+    cout << "After dequeue: ";
+    display(q);
+
+    return 0;
 }

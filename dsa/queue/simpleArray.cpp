@@ -50,3 +50,21 @@ void display(Queue &q) {
         cout << q.arr[i] << " ";
     cout << endl;
 }
+
+int main() {
+    Queue q;
+    init(q);
+
+    enqueue(q, 10);
+    enqueue(q, 20);
+    enqueue(q, 30);
+
+    cout << "Front element: " << peek(q) << endl;
+
+    cout << "Dequeued: " << dequeue(q) << endl;
+
+    cout << "Queue: ";
+    display(q);
+
+    return 0;
+}

@@ -55,3 +55,24 @@ void display(AgePQ &q) {
     }
     cout << endl;
 }
+
+
+int main() {
+    AgePQ q;
+    init(q);
+
+    enqueue(q, 25);
+    enqueue(q, 60);
+    enqueue(q, 40);
+    enqueue(q, 75);
+
+    cout << "Queue (high age first): ";
+    display(q);
+
+    cout << "Dequeued: " << dequeue(q) << endl;
+
+    cout << "After dequeue: ";
+    display(q);
+
+    return 0;
+}

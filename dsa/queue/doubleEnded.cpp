@@ -82,3 +82,25 @@ void display(Deque &d) {
     }
     cout << endl;
 }
+
+
+int main() {
+    Deque d;
+    init(d);
+
+    insertFront(d, 10);
+    insertRear(d, 20);
+    insertFront(d, 5);
+    insertRear(d, 30);
+
+    cout << "Deque: ";
+    display(d);
+
+    cout << "Delete front: " << deleteFront(d) << endl;
+    cout << "Delete rear: " << deleteRear(d) << endl;
+
+    cout << "Deque now: ";
+    display(d);
+
+    return 0;
+}

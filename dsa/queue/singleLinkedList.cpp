@@ -59,3 +59,22 @@ void display(QueueLL &q) {
     }
     cout << endl;
 }
+
+
+int main() {
+    QueueLL q;
+    init(q);
+
+    enqueue(q, 11);
+    enqueue(q, 22);
+    enqueue(q, 33);
+
+    cout << "Front: " << peek(q) << endl;
+
+    cout << "Dequeued: " << dequeue(q) << endl;
+
+    cout << "Queue now: ";
+    display(q);
+
+    return 0;
+}

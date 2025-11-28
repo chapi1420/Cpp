@@ -59,3 +59,24 @@ void display(CircularQueue &q) {
     }
     cout << endl;
 }
+
+
+int main() {
+    CircularQueue q;
+    init(q);
+
+    enqueue(q, 5);
+    enqueue(q, 10);
+    enqueue(q, 15);
+    enqueue(q, 20);
+    enqueue(q, 25);
+
+    cout << "Dequeued: " << dequeue(q) << endl;
+
+    enqueue(q, 100);  // wrapped around
+
+    cout << "Queue: ";
+    display(q);
+
+    return 0;
+}
