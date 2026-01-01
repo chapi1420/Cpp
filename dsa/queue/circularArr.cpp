@@ -73,7 +73,7 @@ int main() {
 
     cout << "Dequeued: " << dequeue(q) << endl;
 
-    enqueue(q, 100);  // wrapped around
+    enqueue(q, 100);  
 
     cout << "Queue: ";
     display(q);
